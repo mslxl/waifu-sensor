@@ -129,7 +129,9 @@ def get_tags_from_image(pic: Image.Image, threshold: float = 0.7, size: int = 51
     real_input = real_input.reshape(1, *real_input.shape)
     with _L:
         if model is None:
-            model = _open_onnx_model(get_onnx_model_file(DEFAULT_MODEL), get_onnx_provider('cpu'))
+            onnx_provider = get_onnx_provider()
+            print(f'ml_danbooru: onnx_provider is {onnx_provider}')
+            model = _open_onnx_model(get_onnx_model_file(DEFAULT_MODEL), onnx_provider)
         native_output, = model.run(['output'], {'input': real_input})
     output = (1 / (1 + np.exp(-native_output))).reshape(-1)
     pairs = sorted([(CLASSES[i], ratio) for i, ratio in enumerate(output)], key=lambda x: (-x[1], x[0]))

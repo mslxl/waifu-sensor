@@ -15,7 +15,7 @@
 
 ```python
 from PIL import Image
-from predict import predict
+from waifu_sensor import predict
 
 print(predict(Image.open('urusai.jpg')))   # [('momoi (blue archive)', 1.4793390460772633), ('midori (blue archive)', 2.2018390494738482), ('iijima yun', 2.309663538692209)]
 ```
