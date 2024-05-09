@@ -20,7 +20,7 @@ setuptools.setup(
         'huggingface-hub>=0.15,<1.0',
         'numpy>=1.24,<2.0',
         'hbutils>=0.9,<1.0',
-        'Pillow~>=10.0,<11.0',
+        'Pillow>=10.0,<11.0',
     ],
     python_requires='>=3.9',
 )
