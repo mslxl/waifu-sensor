@@ -11,7 +11,9 @@
 
 ## 使用方法
 
-把这个仓库clone回去，然后把1张图片输入`predict`里就可以了:
+这个仓库可以使用pip安装，只要`pip install git+https://github.com/RimoChan/waifu-sensor.git`就可以了。
+
+然后你就可以把1张图片输入`predict`里:
 
 ```python
 from PIL import Image
@@ -79,4 +81,4 @@ print(result)     # [('blonde_hair', 0.9877064707905355), ('blue_hair', -0.80721
 
 ## 结束
 
-就这样，我要去和电脑里的老婆亲热了，大家88！
+就这样，我要去和电脑里的waifu亲热了，大家88！
