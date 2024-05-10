@@ -17,7 +17,7 @@
 
 ```python
 from PIL import Image
-from waifu_sensor.v2 import predict
+from waifu_sensor.v3 import predict
 
 result = predict(Image.open('urusai.jpg'))
 print(result)   # [('momoi (blue archive)', 1.8325137893845367), ('iijima yun', 2.4338155048445755), ('midori (blue archive)', 2.5287921933510806)]
@@ -30,6 +30,7 @@ print(result)   # [('momoi (blue archive)', 1.8325137893845367), ('iijima yun', 
 | <img src="./example/urusai.jpg" width="256px"/> | 才羽桃井 <br/> 距离=1.83 | 饭岛结音 <br/> 距离=2.43 | 才羽绿 <br/> 距离=2.53 |
 | <img src="./example/枣.jpg" width="256px"/> | 可可萝 <br/> 距离=2.01 | さびつき <br/> 距离=2.15 | 本间芽衣子 <br/> 距离=2.35 |
 | <img src="./example/flandre.jpg" width="256px"/> | 芙兰朵露·斯卡蕾特 <br/> 距离=1.73 | 露娜·切露德 <br/> 距离=2.57 | 玛艾露贝莉·赫恩 <br/> 距离=2.60 |
+| <img src="./example/hoshino.jpg" width="256px"/> | 小鳥遊星野 <br/> 距离=2.45 | 砾 <br/> 距离=2.90 | 艾琳 <br/> 距离=2.95 |
 
 我也没想到它居然还能识别cosplay，以后带着这个去漫展就不会有不认识的角色了！
 
@@ -40,7 +41,7 @@ print(result)   # [('momoi (blue archive)', 1.8325137893845367), ('iijima yun', 
 
 ```python
 from PIL import Image
-from waifu_sensor.v2 import why_not
+from waifu_sensor.v3 import why_not
 
 result = why_not(Image.open(r'flandre.jpg'), 'remilia scarlet')
 print(result)     # [('blonde_hair', 0.9877064707905355), ('blue_hair', -0.8072149222547358), ('side_ponytail', 0.7606641085460932)]
@@ -58,9 +59,9 @@ print(result)     # [('blonde_hair', 0.9877064707905355), ('blue_hair', -0.80721
 - 训练集下了36个包，是 `data-0\d[023457]1.zip`。 
 - 测试集是 `data-0010.zip` 和 `data-0030.zip`。
 
-测完发现这个瞎搞的准确率其实没有很高，top1命中79%，top3命中85%。
+测完发现这个瞎搞的准确率其实没有很高，top1命中77%，top3命中83%。
 
-嘛，毕竟有5684个分类，长尾的分类太多了。我自己都认不出79%的图，那它已经比我认得多啦！
+嘛，毕竟有7443个分类，长尾的分类太多了。我自己都认不出77%的图，那它已经比我认得多啦！
 
 不过因为只给所有的图打1次标签，相当于只需要炼1个epoch，训练很快。
 
